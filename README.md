@@ -1,5 +1,8 @@
 This article explains how to do Paired T-Test in SSAS 2005 (Microsoft SQL Analysis Services).
 
+Originally posted here:
+<https://www.codeproject.com/Articles/42360/Paired-T-Test-in-SSAS-2005/>
+
 Introduction
 This article assumes some prior knowledge of SSAS and MDX.
 
