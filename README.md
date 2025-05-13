@@ -11,11 +11,11 @@ Well, you should probably use Excel for a single survey. However, if you have mu
 
 This article uses a SQL Server database called "PairedT-Test". Please use this SQL script file: PairedT-Test.sql to create it. The database has the following Entity Relationship Diagram:
 
-Image 1
+![ERD](ERD.gif)
 
 This article also uses the [Paired T- Test] SSAS Cube with a Person and Trial dimensions.
 
-Image 2
+![cube](cube.gif)
 
 You can restore the OLAP database from this backup file: PairedT-Test.abf. Make sure to update the connection and password to the PairedT-Test database. Alternatively, you can restore the OLAP database from the XMLA script file: PairedT-Test.xmla. Make sure to update the connection and password to the PairedT-Test database and to process the database.
 
