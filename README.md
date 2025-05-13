@@ -21,7 +21,7 @@ You can restore the OLAP database from this backup file: PairedT-Test.abf. Make 
 
 Also, make sure that the SSAS_Stat_Func.dll assembly is registered in the cube’s Assemblies folder.
 
-Image 3
+![assembly](assembly.gif)
 
 To see all of the survey data in the "PairedT-Test" OLAP database, please run this MDX statement in SQL Server Management Studio:
 
@@ -41,7 +41,7 @@ To see all of the survey data in the "PairedT-Test" OLAP database, please run th
 
 You will see the following results:
 
-Image 4
+![data](data.gif)
 
 You can see the weight for each person before and after they have taken your weight loss pill and the difference between before and after.
 
@@ -61,7 +61,7 @@ To see the summary including the Statistical Significance information including 
 
 You will see the following results:
 
-Image 5
+![summary](summary.gif)
 
 P-Value (of 0.76 %) gives you the probability that the difference in weight (19.38) can be contributed to chance alone.
 
