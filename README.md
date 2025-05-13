@@ -25,7 +25,7 @@ Image 3
 
 To see all of the survey data in the "PairedT-Test" OLAP database, please run this MDX statement in SQL Server Management Studio:
 
-SQL
+```
   WITH
   MEMBER [Measures].[Weight Before] AS ([Measures].[Avg Weight], [Trial].[Trial].&[1])
   MEMBER [Measures].[Weight After]  AS ([Measures].[Avg Weight], [Trial].[Trial].&[2])
@@ -37,6 +37,7 @@ SQL
   [Person].[Person].[Person].Members,
   [Person].[Person].[All]} on ROWS
   FROM [Paired T- Test]
+```
 
 You will see the following results:
 
@@ -46,7 +47,7 @@ You can see the weight for each person before and after they have taken your wei
 
 To see the summary including the Statistical Significance information including the P-Value, run this MDX statement:
 
-  SQL
+```
   SELECT {
   [Measures].[Weight Diff],
   [Measures].[Weight Diff Std Dev],
@@ -56,6 +57,7 @@ To see the summary including the Statistical Significance information including 
   } on COLUMNS,
   {[Person].[Person].[All]} on ROWS
   FROM [Paired T- Test]
+```
 
 You will see the following results:
 
@@ -65,12 +67,14 @@ P-Value (of 0.76 %) gives you the probability that the difference in weight (19.
 
 The [Paired T- Test] cube has the following calculations:
 
+```
 [Avg Weight]	[Measures].[Weight]/[Measures].[Count]
 [Weight Diff]	([Measures].[Avg Weight], [Trial].[Trial].&[1]) - ([Measures].[Avg Weight], [Trial].[Trial].&[2])
 [Weight Diff Std Dev]	STDDEV([Person].[Person].[Person].Members, [Measures].[Weight Diff])
 [Standard Error]	([Measures].[Weight Diff Std Dev] / (([Measures].[Count]/2)^0.5))
 [T-Value]	[Measures].[Weight Diff] / [Measures].[Standard Error]
 [P-Value]	SSAS_Stat_Func.GetPValue([Measures].[T-Value], ([Measures].[Count]/2)-1)
+```
 
 The P-Value gives you the probability that the difference in weight can be contributed to chance alone. P-Value is calculated using the following steps:
 
@@ -84,8 +88,7 @@ In my statistics class, we were told to use a table at the end of the textbook t
 
 I used the JavaScript formula to write the function GetPValue() in VB.NET. The SSAS_Stat_Func.dll assembly exposes a single function GetPValue(). The GetPValue function returns the P-Value and takes in two parameters: the T-Value and the degree of freedom.
 
-VB
-
+```
 Public Function GetPValue(ByVal t As Double, ByVal n As Long) As Double
     Dim PiD2 As Double = Math.PI / 2
     t = Math.Abs(t)
