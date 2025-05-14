@@ -14,17 +14,17 @@ Well, you should probably use Excel for a single survey. However, if you have mu
 
 This article uses a SQL Server database called "PairedT-Test". Please use this SQL script file: PairedT-Test.sql to create it. The database has the following Entity Relationship Diagram:
 
-![ERD](ERD.gif)
+![ERD](img/ERD.gif)
 
 This article also uses the [Paired T- Test] SSAS Cube with a Person and Trial dimensions.
 
-![cube](cube.gif)
+![cube](img/cube.gif)
 
 You can restore the OLAP database from this backup file: PairedT-Test.abf. Make sure to update the connection and password to the PairedT-Test database. Alternatively, you can restore the OLAP database from the XMLA script file: PairedT-Test.xmla. Make sure to update the connection and password to the PairedT-Test database and to process the database.
 
 Also, make sure that the SSAS_Stat_Func.dll assembly is registered in the cube’s Assemblies folder.
 
-![assembly](assembly.gif)
+![assembly](img/assembly.gif)
 
 To see all of the survey data in the "PairedT-Test" OLAP database, please run this MDX statement in SQL Server Management Studio:
 
@@ -44,7 +44,7 @@ To see all of the survey data in the "PairedT-Test" OLAP database, please run th
 
 You will see the following results:
 
-![data](data.gif)
+![data](img/data.gif)
 
 You can see the weight for each person before and after they have taken your weight loss pill and the difference between before and after.
 
@@ -64,7 +64,7 @@ To see the summary including the Statistical Significance information including 
 
 You will see the following results:
 
-![summary](summary.gif)
+![summary](img/summary.gif)
 
 P-Value (of 0.76 %) gives you the probability that the difference in weight (19.38) can be contributed to chance alone.
 
